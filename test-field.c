@@ -229,14 +229,31 @@ fgets (c,sizeof(c),stdin);//fgets函数终止的条件：1.读取了[ofsize(c)-1
 printf ("%s\n",a);
 printf ("%s",c);
 puts(c);//自带换行符，所以此程序中，此刻会连跳两行
-    */
+  
 char c1[30]="poeple of";
 char c2[]=" china";
 char c3[30];//太小会栈溢出
-strcpy (c3,strcat(c1,c2));
+strcpy (c3,strcat(c1,c2));//若用，strncpy(c3,strcat(c1,c2),n),可确定性赋n位字符
 printf("%s\n",c1);//poeple of china，如果c1[]设小了，会出现一些错误，上次我用c1[10]结果是poeple of poeple of china
 printf("%s\n",c2);// china
 strcpy (c3,strcat(c1,c2));
 printf("%s\n",c3);//poeple of china china
+printf("%d\n",strcmp(c3,c1));//输出0，因为上一步把c1也整成poeple of china china了
+putchar('\n');
+
+char d1[30]="poeple of";
+char d2[]=" china";
+char d3[30];//太小会栈溢出
+strcpy(d3,d1);
+strcat(d3,d2);//通过这一步，就可以不改变c1,c2的值
+printf("%s\n",d1);
+printf("%s\n",d2);
+printf("%s\n",d3);
+printf("%d\n",strcmp(d1,d3));
+putchar('\n');
+printf("%d\n",sizeof(d3));//占用空间的长度
+printf("%d\n",strlen(d3));//实际长度
+   */
+
 return 0;
 }
