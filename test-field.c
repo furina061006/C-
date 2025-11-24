@@ -221,11 +221,11 @@ c[0][0]=1;
     }
     */
 char a[20] ,c[20];
-scanf ("%s",a);//检索不会读取'\n',所以缓冲区会还有个'n'
-getchar ();
+scanf ("%s",a);//检索不会读取'\n',所以缓冲区会还有个'\n',还有scanf在空格处即停止
+getchar ();//吃掉'\n'
 fgets (c,sizeof(c),stdin);//fgets函数有三个参数，一个是输出位置，一个是读取大小，一个是标准输入流，还有两个标准输出流[stdout,stderr]
 printf ("%s\n",a);
-printf ("%s\n",c);
-puts(c);//自带换行符
+printf ("%s",c);
+puts(c);//自带换行符，所以此程序中，此刻会连跳两行
 return 0;
 }
