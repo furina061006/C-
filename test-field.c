@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 int main()
 {
 /*
@@ -219,13 +220,23 @@ c[0][0]=1;
             printf("\n");
         }
     }
-    */
+
 char a[20] ,c[20];
-scanf ("%s",a);//检索不会读取'\n',所以缓冲区会还有个'\n',还有scanf在空格处即停止
+scanf ("%s",a);//检索遇到空白字符就停止读取，如（' ', '\n' ,'\t'等等）不会读取'\n',所以缓冲区会还有个'\n',还有scanf在空格处即停止
 getchar ();//吃掉'\n'
-fgets (c,sizeof(c),stdin);//fgets函数有三个参数，一个是输出位置，一个是读取大小，一个是标准输入流，还有两个标准输出流[stdout,stderr]
+fgets (c,sizeof(c),stdin);//fgets函数终止的条件：1.读取了[ofsize(c)-1]个字符  2.读取到了'\n',然后把'\n'放入数组c中  3.遇到文件终止符EOF
+//fgets有三个参数，一个是输出位置，一个是读取大小，一个是标准输入流，还有两个标准输出流[stdout,stderr]
 printf ("%s\n",a);
 printf ("%s",c);
 puts(c);//自带换行符，所以此程序中，此刻会连跳两行
+    */
+char c1[30]="poeple of";
+char c2[]=" china";
+char c3[30];//太小会栈溢出
+strcpy (c3,strcat(c1,c2));
+printf("%s\n",c1);//poeple of china，如果c1[]设小了，会出现一些错误，上次我用c1[10]结果是poeple of poeple of china
+printf("%s\n",c2);// china
+strcpy (c3,strcat(c1,c2));
+printf("%s\n",c3);//poeple of china china
 return 0;
 }
