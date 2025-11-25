@@ -253,7 +253,18 @@ printf("%d\n",strcmp(d1,d3));
 putchar('\n');
 printf("%d\n",sizeof(d3));//占用空间的长度
 printf("%d\n",strlen(d3));//实际长度
-   */
-
-return 0;
+  
+int a=114514;
+float *p = &a;
+printf("%d\t%lf\n",a,*p);//输出 114514  0.000000
+float b=11451419;
+int *q = &a;
+printf("%f\t%d\n",b,*q);//输出 114514.000000   114514,所以float不能指向int,但int可以指向float型
+printf("%d\t%d\n",sizeof(a),sizeof(b));
+ */
+int a=10;
+int *p1= &a,*p2;
+p2 =&p1;
+printf("%d\t%d\n",p1,*p2);
+return 0;//猜测： ??
 }
