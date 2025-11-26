@@ -264,7 +264,7 @@ printf("%d\t%d\n",sizeof(a),sizeof(b));
  */
 int a=10;
 int *p1= &a,*p2;
-p2 =&p1;
-printf("%d\t%d\n",p1,*p2);
-return 0;//猜测： ??
+p2 = &p1;
+printf("%o\t%o\n",p1,*p2);//可以通过这种方式知晓并修改 p1的存储内容
+return 0;
 }
