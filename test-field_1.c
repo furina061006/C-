@@ -2,7 +2,7 @@
 #include <string.h>
 int main()
 {
-/*
+    /*
 int a;
 double b,c;
 printf("请输入b,c的值");
@@ -194,7 +194,7 @@ scanf("%d",&a);
 prime(a);
 return 0;
 }
-
+/*
 杨辉三角形
 
 int a,i,j;
@@ -261,10 +261,47 @@ float b=11451419;
 int *q = &a;
 printf("%f\t%d\n",b,*q);//输出 114514.000000   114514,所以float不能指向int,但int可以指向float型
 printf("%d\t%d\n",sizeof(a),sizeof(b));
- */
+ 
 int a=10;
 int *p1= &a,*p2;
 p2 = &p1;
 printf("%o\t%o\n",p1,*p2);//可以通过这种方式知晓并修改 p1的存储内容
-return 0;
-}
+
+
+    char ch[100]={},c;
+    int i;
+    for (i=0; i <100; i++) 
+    {
+        c = getchar();
+        if (c == '\n') 
+        {
+            break;
+        }
+        ch[i] = c;
+    }
+    for (i = 0; ch[i] != '\0'; i++) 
+    {
+        if (ch[i] != ' ') 
+        {
+            printf("%c ", ch[i]);
+        }
+    }
+        
+    char* string="I love china";
+    printf("%s\n",string);
+    puts(string);
+    putchar('\n');
+     */
+    char o[]="China";
+    char n[]="sdmfsa will surpass";
+    strcpy(n,o);
+    puts(o);
+    //putchar('\n');
+    puts(n);
+    printf("%s\n",n);
+    printf("%s\n",n);//遇到'\0'都会停止输出，但是
+    char *p=n;//基类型是char，不是int ，用Int一次p+1会跳四格
+    printf("%s\n",p+6);//通过这两种方式可以越狱
+    printf("%s\n",&n[6]);
+    return 0;
+}  
