@@ -49,7 +49,8 @@ int main()
     printf("%d\n",*p1);//有点风险，但是也证明了struct和结构体首成员的地址相同，但是其类型不同，导致编译法则不同
     printf("%c\n",p->sex);//可行，效果等于(*p).sex
     printf("%d\n",&KoBe->age);//错误，违规
-    */
+   
+    //结构体的强制类型转换
     struct Arr
     {
     char name[30];
@@ -58,6 +59,12 @@ int main()
     struct Arr *p=arr[0].phonemumber;
     printf("%c\n",*(char*)(p+1));//这种方法只适用于输出一个字符，而不能输出一整个字符串。
     //更有意思的，这个原本是struct Arr类型的指针，所以，p+1后，跨度是一整个结构体，而不是强制转化后的一个char大小
+    char *p1= arr[0].phonemumber;
+    for (;*p1!='\0';)
+        putchar(*p1++);//也可以这样曲线救国
+    putchar('\n');
     printf("%s\n",arr[0].phonemumber);
+     */
+ 
     return 0;
 }
