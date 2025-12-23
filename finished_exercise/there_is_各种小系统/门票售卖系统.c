@@ -1,3 +1,8 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
 //有 n 张音乐会门票，每张门票都有一定的价格。然后，m 个顾客陆续到来。
 //
 //每位顾客宣布他们愿意为一张门票支付的最高价格，然后，他们将得到一张价格尽可能接近的门票，且不超过最高价格。
@@ -13,11 +18,7 @@
 //打印每位顾客购买门票的价格。之后，就不能再购票了。
 //
 //如果顾客买不到票，则打印 −1。
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-#include <math.h>
-#include <string.h>
-#include <stdlib.h>
+
 int* hasi;
 
 int compare(const void* a, const void* b) {
